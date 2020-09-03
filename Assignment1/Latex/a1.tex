@@ -1,22 +1,15 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+
 \usepackage{setspace}
 \usepackage{gensymb}
-%\doublespacing
+
 \singlespacing
 
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{relsize}
+
 \usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
+
 \usepackage{amsthm}
-%\usepackage{iithtlc}
+
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -24,11 +17,10 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -37,9 +29,9 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -49,16 +41,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-%\usepackage{enumerate}
 
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{2}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -67,18 +55,17 @@
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
-% correct bad hyphenation here
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
 \lstset{
+%language=C,
 frame=single, 
 breaklines=true,
 columns=fullflexible
 }
-
 \begin{document}
-%
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -88,6 +75,7 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -107,12 +95,9 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-\providecommand{\abs}[1]{$\left\vert#1\right\vert$}
-\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
-\providecommand{\mtx}[1]{\mathbf{#1}}
-\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+    %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\cosec}{\,\text{cosec}\,}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
@@ -135,55 +120,63 @@ columns=fullflexible
 \author{Vinjam Lakshmi Sai Vignatha \\ Es17btech11024}
 \maketitle
 \newpage
-%\tableofcontents
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+Download python and latex codes from 
+\begin{lstlisting}
+https://github.com/v-squared99/EE5609/tree/master/Assignment1
+\end{lstlisting}
 \begin{abstract}
 This document contains the solution to problem 30 from \textbf{Points and Vectors}
 \end{abstract}
-%
+
+\section{Problem}
+To find the torque about the origin by the force 
+\begin{align}
+\myvec{4 & 3} \vec{x} = 12
+\end{align}
+are 4 units.
+
 \section{Problem}
 To find the torque about the origin by the force
-
-\vec{\textbf{F}} = \begin{pmatrix}  7 \\  3 \\ -5 \end{pmatrix}
-acting at the point 
-\vec{\textbf{r}} = \begin{pmatrix}  1 \\  -1 \\ 1 \end{pmatrix}. 
-%
-\section{Theory}
-The torque \textbf{T} is given by the cross product (vector product) of the position (or distance) vector \textbf{r}  and the force vector \textbf{F}.
 \begin{align}
-    \textbf{T} = {\textbf{r}  \times  \textbf{F}}
+\vec{F} = \myvec{  7 \\  3 \\ -5}
+\end{align}
+acting at the point 
+\begin{align}
+\vec{r} = \myvec{  1 \\  -1 \\ 1}
+\end{align}
+
+\section{Theory}
+The torque \vec{T} is given by the cross product (vector product) of the position (or distance) vector \vec{r}  and the force vector \vec{F}.
+\begin{align}
+    \vec{T} = {\vec{r}  \times  \vec{F}}
 \end{align}
 And the vector cross product of vectors 
 \begin{align}
-   \textbf{a} = \begin{pmatrix} a_1 \\  a_2  \\ a_3 \end{pmatrix}
+\vec{a} = \myvec{  a_1 \\  a_2 \\ a_3}
 \\
-   \textbf{b} = \begin{pmatrix}  b_1 \\  b_2  \\ b_3 \end{pmatrix}
+\vec{b} = \myvec{  b_1 \\  b_2  \\ b_3}
 \end{align}
 can be expressed as the product of a skew-symmetric matrix and a vector:
-\begin{equation}
-\vec{a \times b} \;=\; \myvec{0 & -a_3 & a_2\\ a_3& 0 &-a_1 \\ -a_2 & a_1 & 0 } \myvec{b_1\\b_2\\b_3}    
-\end{equation}
-
-
-
-\section{Solution}
-\begin{flushleft}
-Torque at the origin is given by,
-\begin{equation}
-\vec{\textbf{F} \times \textbf{r}} \;=\; \myvec{0 & -1 & -1\\ 1& 0 &-1 \\ 1 & 1 & 0 } \myvec{7\\3\\-5}    
-\end{equation}
-\begin{equation}
-\vec{\textbf{F} \times \textbf{r}} \; = \; \myvec{(0 \times 7) \; + \; (-1 \times 3) \; + \; (-1 \times -5)\\(1 \times 7) \; + \; (0 \times 3) \; + \; (-1 \times -5)\\(1 \times 7) \; + \; (1 \times 3) \; + (0 \times -5)}    
-\end{equation}
-
 \begin{align}
-\Longrightarrow  \textbf{T} = \begin{pmatrix} 2 \\  12  \\ 10 \end{pmatrix}
+\vec{a \times b} \;=\; \myvec{0 & -a_3 & a_2\\ a_3& 0 &-a_1 \\ -a_2 & a_1 & 0 } \myvec{b_1\\b_2\\b_3}    
+\end{align}
+\section{Solution}
+
+Torque at the origin is given by,
+\begin{align}
+\vec{F \times r} \;=\; \myvec{0 & -1 & -1\\ 1& 0 &-1 \\ 1 & 1 & 0 } \myvec{7\\3\\-5}  
+\\
+\Longrightarrow\vec{F \times r} \;=\; \myvec{(0 \times 7) \; + \; (-1 \times 3) \; + \; (-1 \times -5)\\(1 \times 7) \; + \; (0 \times 3) \; + \; (-1 \times -5)\\(1 \times 7) \; + \; (1 \times 3) \; + (0 \times -5)} 
+\\
+\Longrightarrow \vec{T} = \myvec{2 \\  12  \\ 10 }
 \end{align}
 
-\newline
-\end{flushleft}
-\newline
-
 \end{document}
+
+
+
+
+
