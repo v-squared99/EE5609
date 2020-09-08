@@ -141,8 +141,8 @@ Prove that
 \begin{align}
 \vec{A^3 - 6A^2 + 7A + 2I} = \vec{0}
 \end{align}
-\section{Theory}
-A n X n square matrix $\vec{A}$ with n linearly independent eigenvectors can be factorised as: 
+\section{Solution}
+$\vec{A}$ with 3 linearly independent eigenvectors can be factorised as: 
     \begin{align}
         \vec{A = Q \Lambda Q^{-1}} 
     \end{align}
@@ -153,29 +153,17 @@ $A^k$, where k is a positive integer, can hence be written as:
     \begin{align}
         \vec{A^k = Q \Lambda^k Q^{-1}} 
     \end{align}
-NOTE: A diagonal matrix can be raised to a power by simply raising the diagonal entries to that power.
 
-
-\section{Solution}
-Finding eigenvalues of $\vec{A}$:
 The characteristic equation is 
 \begin{align}
-\vec{|A - \lambda I|} = 0   
-\implies \begin{vmatrix}1 -\lambda & 0 & 2 \\ 0 & 2 -\lambda & 1 \\ 2 & 0 & 3-\lambda\end{vmatrix} = 0 
-\end{align}
-\begin{align}
-\implies (1-\lamba)(2-\lambda)(3-\lambda) + 2(-2(2-\lambda)) = 0
-\\\implies \lambda^3 - 6\lambda^2 + 7\lambda + 2 = 0     
-\\ \implies \vec{\Lambda=} \myvec{\lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3}
-\end{align}
-where $\lambda_1, \lambda_2, \lambda_3$ are the solutions of the characteristic equation. 
-\newline
-Substituting in $\vec{A^3 - 6A^2 + 7A + 2I}$:
-\begin{align}
-    LHS = \vec{ Q (\Lambda^3 - 6\Lambda^2 + 7\Lambda + 2I )  Q^{-1}} = 0
+    \vec{|A - \lambda I|} = 0 
+    \implies \begin{vmatrix}1 -\lambda & 0 & 2 \\ 0 & 2 -\lambda & 1 \\ 2 & 0 & 3-\lambda\end{vmatrix} = 0 
+    \\\implies (1-\lamba)(2-\lambda)(3-\lambda) + 2(-2(2-\lambda)) = 0
+    \\\implies \lambda^3 - 6\lambda^2 + 7\lambda + 2 = 0
 \end{align}
 
 Hence proved that $\vec{A^3 - 6A^2 + 7A + 2I = 0}$.
+
 
 \end{document}
 
