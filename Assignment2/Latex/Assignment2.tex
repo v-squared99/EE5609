@@ -117,7 +117,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{EE5609-Matrix Theory Assignment 1}
+\title{EE5609-Matrix Theory Assignment 2}
 \author{Vinjam Lakshmi Sai Vignatha \\ Es17btech11024}
 \maketitle
 \newpage
@@ -141,49 +141,43 @@ Prove that
 \begin{align}
 \vec{A^3 - 6A^2 + 7A + 2I} = \vec{0}
 \end{align}
+\section{Theory}
+A n X n square matrix $\vec{A}$ with n linearly independent eigenvectors can be factorised as: 
+    \begin{align}
+        \vec{A = Q \Lambda Q^{-1}} 
+    \end{align}
+
+where $\vec{\Lambda}$ is a diagonal matrix with the diagonal elements corresponding to each eigenvalue. 
+
+$A^k$, where k is a positive integer, can hence be written as:
+    \begin{align}
+        \vec{A^k = Q \Lambda^k Q^{-1}} 
+    \end{align}
+NOTE: A diagonal matrix can be raised to a power by simply raising the diagonal entries to that power.
+
 
 \section{Solution}
-Finding \vec{A^2}:
-
+Finding eigenvalues of $\vec{A}$:
+The characteristic equation is 
 \begin{align}
-    \vec{A^2} = \myvec{1 & 0 & 2 \\ 0 & 2 & 1 \\ 2 & 0 & 3}\myvec{1 & 0 & 2 \\ 0 & 2 & 1 \\ 2 & 0 & 3}
-    \\
-    \implies \vec{A^2} = \myvec{1 + 0 + 4 & 0 + 0 + 0 & 2 + 0 + 6
-                             \\ 0 + 0 +2 & 0 + 4 + 0 & 0 + 2 + 3
-                             \\ 2 + 0 +6 & 0 + 0 +0 & 4+0+9}
-    \\                         
-    \implies \vec{A^2} = \myvec{5 & 0 & 8
-                             \\ 2 & 4 & 5
-                             \\ 8 & 0 & 13}                           
+\vec{|A - \lambda I|} = 0   
+\implies \begin{vmatrix}1 -\lambda & 0 & 2 \\ 0 & 2 -\lambda & 1 \\ 2 & 0 & 3-\lambda\end{vmatrix} = 0 
+\end{align}
+\begin{align}
+\implies (1-\lamba)(2-\lambda)(3-\lambda) + 2(-2(2-\lambda)) = 0
+\\\implies \lambda^3 - 6\lambda^2 + 7\lambda + 2 = 0     
+\\ \implies \vec{\Lambda=} \myvec{\lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3}
+\end{align}
+where $\lambda_1, \lambda_2, \lambda_3$ are the solutions of the characteristic equation. 
+\newline
+Substituting in $\vec{A^3 - 6A^2 + 7A + 2I}$:
+\begin{align}
+    LHS = \vec{ Q (\Lambda^3 - 6\Lambda^2 + 7\Lambda + 2I )  Q^{-1}} = 0
 \end{align}
 
-Finding \vec{A^3}:
+Hence proved that $\vec{A^3 - 6A^2 + 7A + 2I = 0}$.
 
-\begin{align}
-    \vec{A^3} = \myvec{5 & 0 & 8 \\ 2 & 4 & 5 \\ 8 & 0 & 13}\myvec{1 & 0 & 2 \\ 0 & 2 & 1 \\ 2 & 0 & 3}
-    \\
-    \implies \vec{A^3} = \myvec{5 + 0 + 16 & 0 + 0 + 0 & 10 + 0 + 24
-                             \\ 2 + 0 +10 & 0 + 8 + 0 & 4 + 4 + 15
-                             \\ 8 + 0 + 26 & 0 + 0 +0 & 16+0+39}
-    \\                         
-    \implies \vec{A^3} = \myvec{21 & 0 & 34
-                             \\ 12 & 8 & 23
-                             \\ 34 & 0 & 55}                           
-\end{align}
-
-Substituting in \vec{A^3 - 6A^2 + 7A + 2I}:
-
-\begin{align}
-    \myvec{21 & 0 & 34\\ 12 & 8 & 23\\ 34 & 0 & 55} - 6\myvec{5 & 0 & 8 \\ 2 & 4 & 5 \\ 8 & 0 & 13} + 7\myvec{1 & 0 & 2 \\ 0 & 2 & 1 \\ 2 & 0 & 3}+2\myvec{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1}
-    \\
-    = \myvec{21 & 0 & 34\\ 12 & 8 & 23\\ 34 & 0 & 55} - \myvec{30 & 0 & 48 \\ 12 & 24 & 30 \\ 48 & 0 & 78} + \myvec{7 & 0 & 14 \\ 0 & 14 & 7 \\ 14 & 0 & 21}+\myvec{2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2}
-    \\
-    \\\implies LHS =\myvec{0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0}
-    \\\implies LHS = \vec{0}
-\end{align}
-Hence proved that \vec{A^3 - 6A^2 + 7A + 2I = 0}.
 \end{document}
-
 
 
 
