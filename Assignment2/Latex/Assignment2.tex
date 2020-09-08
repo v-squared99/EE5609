@@ -142,17 +142,6 @@ Prove that
 \vec{A^3 - 6A^2 + 7A + 2I} = \vec{0}
 \end{align}
 \section{Solution}
-$\vec{A}$ with 3 linearly independent eigenvectors can be factorised as: 
-    \begin{align}
-        \vec{A = Q \Lambda Q^{-1}} 
-    \end{align}
-
-where $\vec{\Lambda}$ is a diagonal matrix with the diagonal elements corresponding to each eigenvalue. 
-
-$A^k$, where k is a positive integer, can hence be written as:
-    \begin{align}
-        \vec{A^k = Q \Lambda^k Q^{-1}} 
-    \end{align}
 
 The characteristic equation is 
 \begin{align}
@@ -161,8 +150,10 @@ The characteristic equation is
     \\\implies (1-\lamba)(2-\lambda)(3-\lambda) + 2(-2(2-\lambda)) = 0
     \\\implies \lambda^3 - 6\lambda^2 + 7\lambda + 2 = 0
 \end{align}
+The above equation is similar to the equation to be proved. 
+\newline By the Cayley-Hamilton theorem, every square matrix satisfies its own characteristic equation. 
 
-Hence proved that $\vec{A^3 - 6A^2 + 7A + 2I = 0}$.
+\newline Hence proved that $\vec{A^3 - 6A^2 + 7A + 2I = 0}$.
 
 
 \end{document}
